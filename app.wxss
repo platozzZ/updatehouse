@@ -1,0 +1,72 @@
+@import "/style/icon.wxss";
+@import "/style/colorui.wxss";
+
+page{
+  color: #2b2b2b;
+  background: #f9f9f9;
+}
+.box{
+  padding-bottom: 150rpx;
+}
+.text-default{
+  color: #2b2b2b;
+}
+.text-5c{
+  color: #5c5c5c;
+}
+.text-178{
+  color: #b2b2b2
+}
+.text-magi,
+.line-magi,
+.lines-magi {
+	color: #0060e4;
+}
+.text-magigray{
+  color: #adadad;
+}
+.text-136{
+  color: #888;
+}
+.text-26{
+  font-size: 26rpx;
+}
+.bg-magi {
+  background-color: #0060e4;
+  color: #ffffff;
+}
+.bg-241{
+  background: #f1f1f1;
+}
+.cu-btn.bg-magi[disabled] {
+  background: #0060e4;
+  color: #fff;
+  opacity: 1;
+}
+.cu-btn.button-hover {
+  transform: translate(0, 0);
+}
+.cu-btn{
+  border-radius: 4rpx;
+}
+.cu-btn::after, .action .cu-btn::after{
+  border-radius: 4rpx!important;
+}
+.cu-btn[class*="line"]::after{
+  border-width: 2rpx;
+}
+.cu-dialog{
+  border-radius: 4rpx;
+  background: #fff;
+}
+.cu-dialog .cu-bar .action{
+  width: 100%;
+  padding: 0 40rpx;
+  margin: 0;
+}
+.cu-dialog .cu-bar .action .cu-btn{
+  flex: 1;
+  border-radius: 4rpx;
+  height: 70rpx;
+  margin-bottom: 40rpx;
+}

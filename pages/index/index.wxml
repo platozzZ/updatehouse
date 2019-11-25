@@ -1,0 +1,101 @@
+<wxs module="filters" src="../../utils/sourceFilter.wxs"></wxs>
+<image src="https://magicdn.oss-cn-beijing.aliyuncs.com/pms/miniapp/static/indexTopBanner.png" class="banner-img" mode="widthFix"></image>
+<form bindsubmit="formSubmit">
+<view class="box">
+  <view class="margin-top-xl padding bg-white flex flex-direction">
+    <!-- <textarea class="textarea padding text-df text-5c bg-241" name="house_url" value="{{houseUrl}}" placeholder="请在此处粘贴房源链接" maxlength="1000"></textarea> -->
+    <textarea class="textarea padding-sm text-df text-5c bg-241" maxlength="1000" name="house_url" bindblur="textareaBlur" value="{{houseUrl}}" placeholder="请在此处粘贴房源链接"  wx:if="{{modalName == null}}"></textarea>
+    <view class="textarea padding text-df text-5c bg-241" wx:else>{{houseUrl}}</view>
+    <view class="flex align-center justify-between margin-top-xs text-sm">
+      <view class="text-magi flex align-center " bindtap="showModal" data-target="geturl">
+        查看如何获取链接
+        <image src="/images/huoqulianjie@2x.png" mode="widthFix" class="geturlImg margin-left-xs"></image>
+      </view>
+      <view class="text-magigray" bindtap="showModal" data-target="price">计费规则</view>
+    </view>
+  </view>
+
+  <view class="padding-lr padding-top-xl padding-bottom-xs text-136">请选择您希望发布的平台</view>
+  <checkbox-group bindchange="" name="sources">
+    <view class="cu-list menu">
+      <view class="cu-item" wx:for="{{sourceList}}" wx:key="*this">
+        <view class="content flex align-center text-df">
+          <image src="{{filters.sourceFilter(item.source)}}" mode="widthFix" class="sourceIcon"></image>
+          <text>{{item.name}}</text>
+        </view>
+        <view class="action">
+          <checkbox value="{{item.source}}" checked="{{item.checked}}" bindtap="checkTap" data-source="{{item.source}}" />
+        </view>
+      </view>
+    </view>
+  </checkbox-group>
+
+  <view class="cu-bar foot bg-white">
+    <view class="flex btn-pay justify-between align-center">
+      <view class="text-rs padding-lr flex-sub flex align-center">
+        <view>
+          合计：<text class="text-magi text-price text-xl">{{curSource * 5}}</text>
+        </view>
+      </view>
+      <block wx:if="{{isLogin}}">
+        <button class="cu-btn bg-magi" form-type="submit" disabled="{{curSource == 0}}" wx:if="{{curSource > 0}}">去支付</button>
+        <button class="cu-btn bg-magi" bindtap="showTips" wx:else>去支付</button>
+      </block>
+      <button class="cu-btn bg-magi" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:else>去支付</button>
+    </view>
+  </view>
+
+</view>
+</form>
+
+<view class="cu-modal {{modalName == 'price'?'show':''}}" >
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white solid-bottom">
+      <view class="content text-default">计费规则说明</view>
+    </view>
+    <view class="padding-xl text-26 text-rs text-left">
+      <view class="">1.一个房源上传一个平台收费为5元（限时特惠）；上传n个平台收费为5*n元；</view>
+      <view class="margin-top-sm">2.支付完成并提交后，我们会在10个工作日内将房源上传至您所提交的平台，请留意平台审核信息；已上传的平台请勿勾选；</view>
+      <view class="margin-top-sm">3.有些平台需要您完善房源资质信息；</view>
+      <view class="margin-top-sm">4.有问题请联系客服。</view>
+    </view>
+    <view class="cu-bar bg-white addModal justify-center">
+      <view class="action">
+        <button class="cu-btn bg-magi" bindtap='hideModal'>确定</button>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cu-modal {{modalName == 'geturl'?'show':''}}" >
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white solid-bottom">
+      <view class="content text-default">房源链接获取方式</view>
+    </view>
+    <view class="margin text-26 text-rs geturlCotent flex">
+      <scroll-view class="flex-sub" scroll-y>
+        <block wx:for="{{getUrlList}}" wx:key="*this">
+          <view class="account-title flex justify-center align-center {{index==0?'':'margin-top-xl'}} margin-bottom">
+            <view class="menu-icon"></view>
+            <view>{{item.title}}</view>
+            <view class="menu-icon"></view>
+          </view>
+          <view class="account-step">
+            <view class="account-step-cell flex align-end" wx:for="{{item.list}}" wx:key="*this" wx:for-item="l" wx:for-index="i">
+              <view class="margin-right"> 
+                <image src="/images/step0{{i+1}}.png"></image>
+              </view>
+              <view>{{l}}</view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <view class="cu-bar bg-white addModal justify-center">
+      <view class="action padding-lr">
+        <button class="cu-btn bg-magi" bindtap='hideModal'>确定</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<cu-custom></cu-custom>

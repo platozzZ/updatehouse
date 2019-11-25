@@ -1,0 +1,19 @@
+<wxs module="filters" src="../../utils/sourceFilter.wxs"></wxs>
+<view class="padding">
+  <textarea class="textarea padding-sm bg-241 text-178 text-df" disabled="true">
+    {{houseUrl}}
+  </textarea>
+</view>
+<view class="padding-lr padding-top-sm padding-bottom-xs text-136 text-26">发布的平台</view>
+<view class="cu-list menu">
+  <view class="cu-item" wx:for="{{list}}" wx:key="*this">
+    <view class="content flex align-center text-df">
+      <image src="{{filters.sourceFilter(item.source)}}" mode="widthFix" class="sourceIcon"></image>
+      <!-- <image src="/images/tujia.png" mode="widthFix" class="sourceIcon"></image> -->
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+</view>
+<view class="progress-tips text-center">房源发布中，请耐心等待…</view>
+
+<cu-custom></cu-custom>

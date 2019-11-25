@@ -1,0 +1,15 @@
+<view class="padding-lr padding-top padding-bottom-sm">上传房源列表</view>
+<view class="cu-list menu" wx:if="{{list.length > 0}}">
+  <view class="cu-item arrow" wx:for="{{list}}" wx:key="*this" bindtap="toProgress" data-item="{{item}}" data-info="{{item.source_info}}" data-url="{{item.house_url}}">
+    <view class="content text-cut">
+      {{item.house_name}}
+    </view>
+  </view>
+  
+</view>
+<view class="emptyContainer flex flex-direction align-center justify-center" wx:else>
+  <image src="/images/houseEmpty.png" mode="widthFix"></image>
+  <view class="margin-top-xl text-sm">您还未上传房源</view>
+</view>
+
+<cu-custom></cu-custom>

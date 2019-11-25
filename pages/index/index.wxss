@@ -1,0 +1,98 @@
+.banner-img{
+  width: 100%;
+  height: auto;
+}
+.textarea{
+  width: 100%;
+  height: 180rpx;
+  border: 1rpx solid #cecece;
+  word-break: break-all;
+}
+.geturlImg{
+  width: 26rpx;
+  height: 26rpx;
+}
+.cu-list.menu>.cu-item .content{
+  line-height: 1
+}
+.cu-list.menu>.cu-item .content>image.sourceIcon{
+  width: 40rpx;
+  height: 40rpx;
+}
+checkbox::before{
+  content: ''!important;
+  color: #0060e4!important;
+}
+checkbox .wx-checkbox-input {
+  border-radius: 4rpx;
+  height: 38rpx;
+  width: 38rpx;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  border: 1rpx solid #0060e4!important;
+  background: rgba(255,255,255,0)!important;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  color: #0060e4!important;
+  font-size: 36rpx!important;
+  display: block;
+}
+.cu-bar.foot{
+  box-shadow: none;
+}
+.btn-pay{
+  width: 100%;
+}
+.btn-pay .cu-btn{
+  height: 110rpx;
+  border-radius: 0;
+  padding: 0 80rpx;
+  font-size: 30rpx;
+  width: auto;
+}
+.btn-pay .cu-btn::after{
+  border-radius: 0;
+}
+.btn-pay>view{
+  height: 110rpx;
+  border: 1rpx solid #0060e4;
+  /* border-bottom: 1rpx solid #0060e4; */
+}
+
+.geturlCotent{
+  max-height: 700rpx;
+}
+.menu-icon{
+  width: 12px;
+  height: 7px;
+  border-top: 1px solid #888888;
+  border-bottom: 1px solid #888888;
+  background-color: #888888;
+  padding: 2px 0;
+  background-clip: content-box;
+}
+.account-title{
+  font-size: 30rpx;
+  color: #888888;
+  /* padding: 90rpx 0 30rpx; */
+}
+.account-title view{
+  margin: 0 10rpx;
+}
+.account-step{
+  /* margin: 0 30rpx; */
+  background: rgb(237,237,237);
+  padding: 40rpx 30rpx;
+}
+.account-step-cell{
+  color: rgb(92,92,92);
+  padding-bottom: 50rpx;
+}
+.account-step-cell:last-child{
+  padding: 0;
+}
+.account-step-cell image{
+  width: 42rpx;
+  height: 42rpx;
+  /* margin-right: 34rpx; */
+}
