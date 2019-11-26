@@ -220,4 +220,16 @@ Page({
       return true
     }
   },
+  onShareAppMessage(options) {
+    return {
+      title: '帮您上传房源到多个民宿平台',
+      path: "/pages/index/index",
+      success: function (res) {
+        console.log('onShareAppMessage  success:', res)
+      },
+      fail: function (res) {
+        console.log('onShareAppMessage  fail:', res)
+      }
+    }
+  }
 })
