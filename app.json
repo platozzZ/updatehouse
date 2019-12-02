@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/main/main",
+    "pages/upload/upload",
     "pages/progress/progress"
   ],
   "tabBar": {

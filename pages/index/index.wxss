@@ -1,6 +1,11 @@
+page,.container{
+  width: 100%;
+  height: 100%;
+}
 .banner-img{
   width: 100%;
   height: auto;
+  display: block;
 }
 .textarea{
   width: 100%;
@@ -95,4 +100,16 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   width: 42rpx;
   height: 42rpx;
   /* margin-right: 34rpx; */
+}
+
+.sources{
+  color: rgb(153,153,153);
+}
+.sources image{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.btn-index button{
+  height: 80rpx;
 }
